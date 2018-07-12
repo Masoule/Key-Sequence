@@ -7,8 +7,16 @@
 </head>
 <body>
 <script>
+const keys = [];
+const secret = 'salome'
 
-
+window.addEventListener('keyup', e => {
+  keys.push(e.key)
+  if (keys.length > secret.length) keys.shift()
+  if (keys.join('').includes(secret)) {
+    cornify_add()
+  }
+})
 </script>
 </body>
 </html>
